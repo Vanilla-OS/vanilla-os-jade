@@ -16,7 +16,8 @@ configure_file(
 
 vanilla_os_jade_sources = [
     '__init__.py',
-    'main.py'
+    'main.py',
+    'parser.py'
 ]
 
 install_data(vanilla_os_jade_sources, install_dir: moduledir)

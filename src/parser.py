@@ -17,3 +17,29 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 import json
+
+class Config:
+    def __init__(self, config):
+        self.config = config
+        self.parsed_config = json.loads(config)
+
+    def get_partition_settings(self):
+        return self.parsed_config["partition"]
+
+    def get_bootloader_settings(self):
+        return self.parsed_config["bootloader"]
+
+    def get_locale_settings(self):
+        return self.parsed_config["locale"]
+
+    def get_networking_settings(self):
+        return self.parsed_config["networking"]
+
+    def get_user_settings(self):
+        return self.parsed_config["users"]
+
+    def get_root_password(self):
+        return self.parsed_config["rootpass"]
+
+    def get_extra_packages(self):
+        return self.parsed_config["extra_packages"]

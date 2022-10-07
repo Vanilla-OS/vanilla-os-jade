@@ -1,0 +1,46 @@
+{
+    "partition": {
+        "device": "sda",
+        "mode": "Auto",
+        "efi": true,
+        "partitions": [
+            "/mnt/home:/dev/sdb2:btrfs"
+        ]
+    },
+    "bootloader": {
+        "type": "grub-efi",
+        "location": "/boot/efi"
+    },
+    "locale": {
+        "locale": [
+            "en_US.UTF-8 UTF-8"
+        ],
+        "keymap": "colemak",
+        "timezone": "Europe/Berlin"
+    },
+    "networking": {
+        "hostname": "jade-test",
+        "ipv6": false
+    },
+    "users": [
+        {
+            "name": "jade",
+            "password": "TaCVRgYCAHag6",
+            "hasroot": true,
+            "shell": "bash"
+        },
+        {
+            "name": "jade2",
+            "password": "TzSMi3EezsXZM",
+            "hasroot": false,
+            "shell": "fish"
+        }
+    ],
+    "rootpass": "3IwCDE/t39wuQ",
+    "extra_packages": [
+        "firefox",
+        "vim",
+        "git",
+        "tmux"
+    ]
+}

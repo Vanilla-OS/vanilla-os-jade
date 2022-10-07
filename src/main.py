@@ -17,8 +17,19 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+from vanilla_os_jade.parser import Config
+
 def main(argv):
-    """This statement prints Hello, World to your console"""
-    print("Hello, World")
-    print(argv)
+    if argv[1] == "config":
+        config = ""
+        with open(argv[2], "r+") as f:
+            config = f.read()
+        parsed = Config(config=config)
+        print(parsed.get_partition_settings())
+        print(parsed.get_bootloader_settings())
+        print(parsed.get_locale_settings())
+        print(parsed.get_networking_settings())
+        print(parsed.get_user_settings())
+        print(parsed.get_root_password())
+        print(parsed.get_extra_packages())
 
