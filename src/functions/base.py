@@ -1,5 +1,4 @@
 from vanilla_os_jade.utils.command import  CommandUtils
-import vanilla_os_jade.utils.partition.*
 
 def install_base():
     '''Extracts the squashfs image on install root'''

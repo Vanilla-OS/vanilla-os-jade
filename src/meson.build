@@ -14,6 +14,9 @@ configure_file(
       install_dir: get_option('bindir')
 )
 
+subdir('functions')
+subdir('utils')
+
 vanilla_os_jade_sources = [
     '__init__.py',
     'main.py',

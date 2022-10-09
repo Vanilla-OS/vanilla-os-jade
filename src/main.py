@@ -17,15 +17,18 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from vanilla_os_jade.parser import Config
+from .parser import Config
+from .functions.partitioning import make_partitions
 
 def main(argv):
     if argv[1] == "config":
         config = ""
+
         with open(argv[2], "r+") as f:
             config = f.read()
-        parsed = Config(config=config)
-        print(parsed.get_partition_settings())
+            parsed = Config(config=config)
+
+        make_partitions(parsed.get_partition_settings())
         print(parsed.get_bootloader_settings())
         print(parsed.get_locale_settings())
         print(parsed.get_networking_settings())

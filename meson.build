@@ -4,8 +4,4 @@ project('vanilla-os-jade',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )
 
-
-
-
 subdir('src')
-
