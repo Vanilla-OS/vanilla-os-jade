@@ -18,7 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from .parser import Config
-from .functions.partitioning import make_partitions
+from .functions.partitioning import Partitioning
 
 def main(argv):
     if argv[1] == "config":
@@ -28,7 +28,7 @@ def main(argv):
             config = f.read()
             parsed = Config(config=config)
 
-        make_partitions(parsed.get_partition_settings())
+        Partitioning(parsed.get_partition_settings())
         print(parsed.get_bootloader_settings())
         print(parsed.get_locale_settings())
         print(parsed.get_networking_settings())

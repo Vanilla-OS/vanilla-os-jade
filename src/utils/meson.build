@@ -4,6 +4,7 @@ utilsdir = join_paths(pkgdatadir, 'vanilla_os_jade/utils')
 vanilla_os_jade_sources = [
     '__init__.py',
     'command.py',
+    'device.py',
 ]
 
 install_data(vanilla_os_jade_sources, install_dir: utilsdir)

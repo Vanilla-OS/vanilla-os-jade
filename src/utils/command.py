@@ -5,6 +5,10 @@ class CommandUtils:
 
     @staticmethod
     def run_command(command: list, output: bool = False, decode: bool = True):
+        if "FAKE" in os.environ:
+            print(" ".join(command))
+            return
+            
         if output:
             res = subprocess.check_output(command)
             if decode:
