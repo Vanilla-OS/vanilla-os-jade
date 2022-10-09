@@ -13,7 +13,7 @@ def format(disk: str, filesystem: str):
         CommandUtils.check_output("mkfs.ext4 "+disk)
     elif filesystem == "xfs":
         CommandUtils.check_output("mkfs.xfs -f "+disk)
-    elif filesystem == "fat32" || filesystem == "vfat":
+    elif filesystem == "fat32" or filesystem == "vfat":
         CommandUtils.check_output("mkfs.fat -F32 "+disk)
     elif filesystem == "f2fs":
         CommandUtils.check_output("mkfs.f2fs "+disk)
