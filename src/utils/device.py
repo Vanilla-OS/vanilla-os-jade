@@ -6,7 +6,7 @@ import math
 class Device:
 
     def __init__(self, device: str):
-        self.__device = f"/dev/{device}"
+        self.__device = device
         self.__virtual_partitions = {}
         self.__device_size = self.__get_device_size()
 
